@@ -1,0 +1,32 @@
+Now we will write the function to Calculator BMI and add the event with button click event. So whenever we will click on the button it will calculate the BMI.
+
+Let me show you the formula first then we will add this to our file demo.dart based on our case.
+/*
+    @params heigh is in Meter
+    @params weight is in Kilogram
+*/
+double calculateBMI(double height, double weight){
+    double heightSquare = height * height;
+    double result = weight / heightSquare;
+    return result;
+}
+The above code is for refernce so that you can know the formula for BMI(in case you don't know) .
+void calculateBMI(){
+    double height = double.parse(_heightController.text) / 100;
+    double weight = double.parse(_weightController.text);
+    // We dived height by 100 because we are taking the height in centimeter
+    // and formula takes height in meter.
+
+    double heightSquare = height * height;
+    double result = weight / heightSquare;
+    print(result);
+}.
+Let’s attach the method to the button click or press.
+RaisedButton(
+    color: Colors.pinkAccent,
+    child: Text(
+        "Calculate",
+        style: TextStyle(color: Colors.white),
+    ),
+    onPressed: calculateBMI,
+),
