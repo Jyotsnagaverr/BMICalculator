@@ -1,0 +1,14 @@
+In this step we will limit the two digit after the decimal so that it will look consistent and not break the UI.
+
+The above code is good and everything works fine but there is a UI related issue which user will face someday.
+There is one more issue that the decimal value could be very long i.e. There could be 2 digit after decimal or 8 digit after decimal.
+Let’s make the UI consistent by doing a simple tweaks.
+Text(
+  _result == null ? "Enter Value" : "BMI : ${_result.toStringAsFixed(2)}",
+  style: TextStyle(
+    color: Colors.redAccent,
+    fontSize: 19.4,
+    fontWeight: FontWeight.w500,
+  ),
+),
+toStringAsFixed allow us to limit the number of number after decimal.
