@@ -1,0 +1,20 @@
+Now we will bind the input controller with the weight and height field. It will help us in getting the value from the field.
+final TextEditingController _heightController = TextEditingController();
+  final TextEditingController _weightController = TextEditingController();
+
+Now we have defined two controller for two Text Field. Let attach to the the respective text field, So that we could have control over the Text Field.
+TextField(
+  controller: _heightController,  // Added
+  decoration: InputDecoration(
+    labelText: 'height in cm',
+    icon: Icon(Icons.trending_up),
+  ),
+),
+Let’s attach tot he wight also.
+TextField(
+  controller: _weightController,  // Added
+  decoration: InputDecoration(
+    labelText: 'weight in kg',
+    icon: Icon(Icons.line_weight),
+  ),
+),
