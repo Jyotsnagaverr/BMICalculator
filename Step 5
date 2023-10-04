@@ -1,0 +1,27 @@
+In the previous step we created the BMI calculator which kind of works but there is problem. The app is showing the result in the console and we want in the app.
+double _result;  // new variable defined for result
+
+void calculateBMI(){
+    double height = double.parse(_heightController.text) / 100;
+    double weight = double.parse(_weightController.text);
+    // We dived height by 100 because we are taking the height in centimeter
+    // and formula takes height in meter.
+
+    double heightSquare = height * height;
+    double result = weight / heightSquare;
+    print(result);
+
+    // setState will update the UI
+    setState((){
+      result = result;
+    });
+}
+We are still missing one things, we have never called the result variable in the UI. We just defined the result variable so If would have called this earlier then this would be injustice for the reader.
+Text(
+  _result == null ? "Enter Value" : "BMI : $_result",
+  style: TextStyle(
+    color: Colors.redAccent,
+    fontSize: 19.4,
+    fontWeight: FontWeight.w500,
+  ),
+),
